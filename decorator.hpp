@@ -4,9 +4,12 @@
 
 class Decorator: public Base{
 	protected:
-	Base* c;
+	
 	
 	public:
+	Base* c;
+	Decorator(Base* b){this->c = b;}
+	
 	virtual double evaluate(){
 		return this->c->evaluate();
 	}
@@ -14,9 +17,9 @@ class Decorator: public Base{
     virtual std::string stringify(){
 		return this->c->stringify();
 	}
-	
+	/*
 	void set_child(Base * c){
 		this->c = c;
-	}
+	}*/
 };
 #endif

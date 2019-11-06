@@ -1,4 +1,5 @@
 #include "gtest/gtest.h"
+#include "evaluateDecoratorTest.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

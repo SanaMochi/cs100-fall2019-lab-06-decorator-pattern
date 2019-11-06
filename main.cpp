@@ -30,10 +30,22 @@ int main(){
     Op* six = new Op(6);
     Sub* TreeC = new Sub(ten, six);
     
-    Decorator* test = new Trunc("5-7");
+    Decorator* dec = new Decorator(TreeC);
+    Decorator* d2 = new Decorator(TreeC);
+    Paren* p = new Paren(dec);
+    Trunc * t = new Trunc(d2);
+    //Add* a = new Add(three, t);
+    //Paren* paren = dec;
+    //Paren* paren = dec;
+    std::cout << p->stringify() << std::endl;
+    //std::cout << "T: " << t->stringify() << std::endl;
+    //std::cout << a->stringify() << std::endl;
+   
+   /*
+    Base* test = new Trunc("5-7");
     test->set_child(test);
     std::cout << test->stringify();
-
+*/
     
  /*
     VectorContainer* container = new VectorContainer();
