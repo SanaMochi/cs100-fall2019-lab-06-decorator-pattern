@@ -4,3 +4,4 @@ main
 CMakeCache.txt
 CMakeFiles
 CMakeLists
+cmake_install.cmake
