@@ -1,5 +1,6 @@
-CMakeFiles
-CMakeLists
+CMakeCache.txt
+CMakeFiles/
 cmake_install.cmake
+Makefile
+
 test
-main
