@@ -17,6 +17,8 @@ base.hpp
 /home/csmajs/smohi002/lab-06-decorator-pattern-michael_sana_lab6/base.hpp
 string
 -
+iostream
+-
 
 /home/csmajs/smohi002/lab-06-decorator-pattern-michael_sana_lab6/abs.hpp
 base.hpp
@@ -33,10 +35,10 @@ base.hpp
 /home/csmajs/smohi002/lab-06-decorator-pattern-michael_sana_lab6/base.hpp
 string
 -
+sstream
+-
 
 /home/csmajs/smohi002/lab-06-decorator-pattern-michael_sana_lab6/ceiling.hpp
-base.hpp
-/home/csmajs/smohi002/lab-06-decorator-pattern-michael_sana_lab6/base.hpp
 decorator.hpp
 /home/csmajs/smohi002/lab-06-decorator-pattern-michael_sana_lab6/decorator.hpp
 cmath
@@ -79,6 +81,8 @@ cmath
 -
 
 /home/csmajs/smohi002/lab-06-decorator-pattern-michael_sana_lab6/op.hpp
+string
+-
 base.hpp
 /home/csmajs/smohi002/lab-06-decorator-pattern-michael_sana_lab6/base.hpp
 

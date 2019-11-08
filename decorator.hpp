@@ -12,7 +12,7 @@ class Decorator : public Base {
 	virtual double evaluate() {
 		return this->c->evaluate();
 	}
-    virtual std::string stringify() {
+	virtual std::string stringify() {
 		return this->c->stringify();
 	}
 	void set_child(Base* c) {

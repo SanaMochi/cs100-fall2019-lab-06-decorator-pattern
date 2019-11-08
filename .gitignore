@@ -1,5 +1,6 @@
 Makefile
 test
+main
 CMakeCache.txt
 CMakeFiles
 CMakeLists
