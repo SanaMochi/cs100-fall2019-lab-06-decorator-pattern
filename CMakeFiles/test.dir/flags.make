@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = -Dgtest_disable_pthreads=ON
 
-CXX_INCLUDES = -isystem /home/csmajs/mwdow001/lab-06-decorator-pattern-michael_sana_lab6/googletest/googletest/include -isystem /home/csmajs/mwdow001/lab-06-decorator-pattern-michael_sana_lab6/googletest/googletest 
+CXX_INCLUDES = -isystem /home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/googletest/googletest/include -isystem /home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/googletest/googletest 
 

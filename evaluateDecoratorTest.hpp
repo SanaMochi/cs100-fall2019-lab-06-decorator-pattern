@@ -12,6 +12,8 @@
 #include "paren.hpp"
 #include "trunc.hpp"
 #include "decorator.hpp"
+#include "ceiling.hpp"
+#include "floor.hpp"
 
 TEST(DecoratorTests, BasicParenTest){
     Op* six = new Op(6);
@@ -82,6 +84,7 @@ TEST(DecoratorTests, ParenAndTrunc){
     EXPECT_EQ(p->stringify(), "(2.000000 - 4.000000)");
 }
 
+///---------------------------------------------------fix these---------------------------------
 TEST(DecoratorTests, AddCeilPosTest) {
     Base* op1 = new Op(7.5);
     Base* op2 = new Op(1.4);

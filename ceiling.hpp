@@ -5,9 +5,10 @@
 #include <cmath>
 
 class Ceiling : public Decorator {
+	Base * b;
 	public:
-	Ceiling() { };
-	Ceiling(Base* c) {
+	Ceiling() : Decorator(b){ };
+	Ceiling(Base* c) : Decorator(c){
 		this->c = c;
 	}
 	

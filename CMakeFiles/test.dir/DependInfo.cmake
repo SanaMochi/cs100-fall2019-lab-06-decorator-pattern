@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/csmajs/mwdow001/lab-06-decorator-pattern-michael_sana_lab6/test.cpp" "/home/csmajs/mwdow001/lab-06-decorator-pattern-michael_sana_lab6/CMakeFiles/test.dir/test.cpp.o"
+  "/home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/test.cpp" "/home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/CMakeFiles/test.dir/test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,7 +21,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/csmajs/mwdow001/lab-06-decorator-pattern-michael_sana_lab6/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
