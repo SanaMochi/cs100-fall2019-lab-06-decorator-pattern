@@ -5,7 +5,6 @@
 //#include "Pow.hpp"
 #include "add.hpp"
 #include "sub.hpp"
-//#include "rand.hpp"
 //#include "container.hpp"
 //#include "vector.hpp"
 //#include "sort.hpp"

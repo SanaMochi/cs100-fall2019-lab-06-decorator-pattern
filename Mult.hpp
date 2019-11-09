@@ -3,6 +3,8 @@
 
 #include "base.hpp"
 #include <string>
+#include <iostream>
+
 
 class Mult : public Base {
 	Base* Op1;
