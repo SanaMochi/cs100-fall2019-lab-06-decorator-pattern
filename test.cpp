@@ -1,6 +1,4 @@
 #include "gtest/gtest.h"
-
-//#include "container_test.hpp"
 #include "evaluateDecoratorTest.hpp"
 
 int main(int argc, char **argv) {

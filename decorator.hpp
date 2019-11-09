@@ -1,23 +1,25 @@
-#ifndef __Decorator__
-#define __Decorator__
-
+#ifndef __DEC_HPP__
+#define __DEC_HPP__
 #include "base.hpp"
 
-class Decorator : public Base {
+class Decorator: public Base{
 	protected:
-	Base* c;
+	
 	
 	public:
-	Decorator() { };
-	virtual double evaluate() {
+	Base* c;
+	Decorator(Base* b){this->c = b;}
+	
+	virtual double evaluate(){
 		return this->c->evaluate();
 	}
-	virtual std::string stringify() {
+	
+    virtual std::string stringify(){
 		return this->c->stringify();
 	}
-	void set_child(Base* c) {
+	/*
+	void set_child(Base * c){
 		this->c = c;
-	}
+	}*/
 };
-
-#endif //__Decorator__
+#endif

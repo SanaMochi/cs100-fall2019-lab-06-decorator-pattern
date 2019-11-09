@@ -7,16 +7,82 @@
 #include "op.hpp"
 #include "Mult.hpp"
 #include "Div.hpp"
-//#include "Pow.hpp"
 #include "add.hpp"
 #include "sub.hpp"
-//#include "rand.hpp"
-#include "ceiling.hpp"
-#include "floor.hpp"
-#include "abs.hpp"
+#include "paren.hpp"
+#include "trunc.hpp"
 #include "decorator.hpp"
 
-TEST(DecoratorEvaluate, AddCeilPosTest) {
+TEST(DecoratorTests, BasicParenTest){
+    Op* six = new Op(6);
+    Decorator* dec = new Decorator(six);
+    Paren* p = new Paren(dec);
+    EXPECT_EQ(p->stringify(), "(6.000000)");
+}
+
+TEST(DecoratorTests, BasicTruncTest){
+	Op* ten = new Op(10);
+    Op* six = new Op(6);
+    Sub* Tree = new Sub(ten, six);
+    Decorator* dec = new Decorator(Tree);
+    Trunc * t = new Trunc(dec);
+    EXPECT_EQ(t->stringify(), "4.000000");
+}
+
+TEST(DecoratorTests, TruncTestAdd){
+	Op* ten = new Op(10);
+    Op* six = new Op(6);
+    Op* two = new Op(2);
+    Sub* Tree = new Sub(ten, six);
+    Decorator* dec = new Decorator(Tree);
+    Trunc * t = new Trunc(dec);
+    Add* a = new Add(two, t);
+    EXPECT_EQ(a->stringify(), "2.000000 + 4.000000");
+}
+
+TEST(DecoratorTests, TruncTestSub){
+	Op* ten = new Op(10);
+    Op* six = new Op(6);
+    Op* two = new Op(2);
+    Sub* Tree = new Sub(ten, six);
+    Decorator* dec = new Decorator(Tree);
+    Trunc * t = new Trunc(dec);
+    Sub* s = new Sub(two, t);
+    EXPECT_EQ(s->stringify(), "2.000000 - 4.000000");
+}
+
+TEST(DecoratorTests, ParenTestAdd){
+    Op* six = new Op(6);
+    Op* four = new Op(4);
+    Add* a = new Add(six, four);
+    Decorator* dec = new Decorator(a);
+    Paren* p = new Paren(dec);
+    EXPECT_EQ(p->stringify(), "(6.000000 + 4.000000)");
+}
+
+TEST(DecoratorTests, ParenTestSub){
+    Op* six = new Op(6);
+    Op* four = new Op(4);
+    Sub* s = new Sub(six, four);
+    Decorator* dec = new Decorator(s);
+    Paren* p = new Paren(dec);
+    EXPECT_EQ(p->stringify(), "(6.000000 - 4.000000)");
+}
+
+TEST(DecoratorTests, ParenAndTrunc){
+    Op* ten = new Op(10);
+    Op* six = new Op(6);
+    Op* two = new Op(2);
+    Sub* Tree = new Sub(ten, six);
+    Decorator* dec = new Decorator(Tree);
+    Trunc * t = new Trunc(dec);
+    Sub* s = new Sub(two, t);
+    Decorator* d2 = new Decorator(s);
+    Paren* p = new Paren(d2);
+    EXPECT_EQ(p->stringify(), "(2.000000 - 4.000000)");
+}
+
+TEST(DecoratorTests, AddCeilPosTest) {
     Base* op1 = new Op(7.5);
     Base* op2 = new Op(1.4);
     
@@ -26,7 +92,7 @@ TEST(DecoratorEvaluate, AddCeilPosTest) {
     EXPECT_EQ(test1->evaluate(), 9);
 }
 
-TEST(DecoratorEvaluate, AddCeilNegTest) {
+TEST(DecoratorTests, AddCeilNegTest) {
 	Base* op1 = new Op(-7.5);
 	Base* op2 = new Op(-1.4);
 
@@ -35,7 +101,7 @@ TEST(DecoratorEvaluate, AddCeilNegTest) {
 	EXPECT_EQ(test->evaluate(), -9);
 }
 
-TEST(DecoratorEvaluate, AddCeilZeroTest) {
+TEST(DecoratorTests, AddCeilZeroTest) {
         Base* op1 = new Op(0.5);
         Base* op2 = new Op(-0.0);
 
@@ -44,7 +110,7 @@ TEST(DecoratorEvaluate, AddCeilZeroTest) {
         EXPECT_EQ(test->evaluate(), 0.5);
 }
 
-TEST(DecoratorEvaluate, SubCeilPosTest) {
+TEST(DecoratorTests, SubCeilPosTest) {
         Base* op1 = new Op(7.5);
         Base* op2 = new Op(1.4);
 
@@ -53,7 +119,7 @@ TEST(DecoratorEvaluate, SubCeilPosTest) {
         EXPECT_EQ(test->evaluate(), 6);
 }
 
-TEST(DecoratorEvaluate, MultCeilNegTest) {
+TEST(DecoratorTests, MultCeilNegTest) {
         Base* op1 = new Op(0.5);
         Base* op2 = new Op(-6);
 
@@ -62,7 +128,7 @@ TEST(DecoratorEvaluate, MultCeilNegTest) {
         EXPECT_EQ(test->evaluate(), -3);
 }
 
-TEST(DecoratorEvaluate, DivCeilNegTest) {
+TEST(DecoratorTests, DivCeilNegTest) {
         Base* op1 = new Op(-6);
         Base* op2 = new Op(0.5);
 
@@ -71,7 +137,7 @@ TEST(DecoratorEvaluate, DivCeilNegTest) {
         EXPECT_EQ(test->evaluate(), -12);
 }
 
-TEST(DecoratorEvaluate, AddFloorPosTest){
+TEST(DecoratorTests, AddFloorPosTest){
         Base* op1 = new Op(3.6);
         Base* op2 = new Op(7.5);
 
@@ -80,7 +146,7 @@ TEST(DecoratorEvaluate, AddFloorPosTest){
         EXPECT_EQ(test->evaluate(),11);
 }
 
-TEST(DecoratorEvaluate, SubFloorPosTest){
+TEST(DecoratorTests, SubFloorPosTest){
         Base* op1 = new Op(3.6);
         Base* op2 = new Op(7.5);
 
@@ -89,7 +155,7 @@ TEST(DecoratorEvaluate, SubFloorPosTest){
         EXPECT_EQ(test->evaluate(), -4);
 }
 
-TEST(DecoratorEvaluate, MultFloorPosTest) {
+TEST(DecoratorTests, MultFloorPosTest) {
         Base* op1 = new Op(0.5);
         Base* op2 = new Op(6.6);
 
@@ -98,7 +164,7 @@ TEST(DecoratorEvaluate, MultFloorPosTest) {
         EXPECT_EQ(test->evaluate(),0);
 }
 
-TEST(DecoratorEvaluate, DivFloorPosTest) {
+TEST(DecoratorTests, DivFloorPosTest) {
         Base* op1 = new Op(6.6);
         Base* op2 = new Op(0.5);
 
@@ -107,7 +173,7 @@ TEST(DecoratorEvaluate, DivFloorPosTest) {
         EXPECT_EQ(test->evaluate(), 13);
 }
 
-TEST(DecoratorEvaluate, AddAbsNegTest) {
+TEST(DecoratorTests, AddAbsNegTest) {
         Base* op1 = new Op(-10.3);
         Base* op2 = new Op(5.6);
 
@@ -117,7 +183,7 @@ TEST(DecoratorEvaluate, AddAbsNegTest) {
 }
 
 
-TEST(DecoratorEvaluate, SubAbsPosTest) {
+TEST(DecoratorTests, SubAbsPosTest) {
         Base* op1 = new Op(0.5);
         Base* op2 = new Op(6.6);
 
@@ -126,7 +192,7 @@ TEST(DecoratorEvaluate, SubAbsPosTest) {
         EXPECT_EQ(test->evaluate(), 6.1);
 }
 
-TEST(DecoratorEvaluate, MultAbsNegTest) {
+TEST(DecoratorTests, MultAbsNegTest) {
         Base* op1 = new Op(6.6);
         Base* op2 = new Op(-0.5);
 
@@ -135,7 +201,7 @@ TEST(DecoratorEvaluate, MultAbsNegTest) {
         EXPECT_EQ(test->evaluate(), 3.3);
 }
 
-TEST(DecoratorEvaluate, DivAbsPosTest) {
+TEST(DecoratorTests, DivAbsPosTest) {
         Base* op1 = new Op(6.6);
         Base* op2 = new Op(0.5);
 

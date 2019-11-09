@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 
+
 class Mult : public Base {
 	Base* Op1;
 	Base* Op2;
