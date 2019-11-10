@@ -1,13 +1,18 @@
-#ifdef _Floor_
+#ifndef _Floor_
 #define _Floor_
 
-#include "base.hpp"
+//#include "base.hpp"
 #include "decorator.hpp"
 #include <cmath>
 
 class Floor : public Decorator {
 	public:
-	virtual int evaluate() {
+	
+	Floor(Base* c) : Decorator(c){
+		this->c = c;
+	}
+	
+	virtual double evaluate() {
 		return floor(this->c->evaluate());
 	}
 };

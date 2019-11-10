@@ -20,6 +20,12 @@ string
 iostream
 -
 
+/home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/abs.hpp
+decorator.hpp
+/home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/decorator.hpp
+cmath
+-
+
 /home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/add.hpp
 base.hpp
 /home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/base.hpp
@@ -59,14 +65,14 @@ trunc.hpp
 /home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/trunc.hpp
 decorator.hpp
 /home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/decorator.hpp
-ceiling.hpp
-/home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/ceiling.hpp
 floor.hpp
 /home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/floor.hpp
+ceiling.hpp
+/home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/ceiling.hpp
+abs.hpp
+/home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/abs.hpp
 
 /home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/floor.hpp
-base.hpp
-/home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/base.hpp
 decorator.hpp
 /home/csmajs/mwdow001/test/lab-06-decorator-pattern-michael_sana_lab6/decorator.hpp
 cmath
